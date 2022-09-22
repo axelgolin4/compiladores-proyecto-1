@@ -43,6 +43,10 @@ while(bandera == 1):
 
         elif a == "ls":
                 os.system("ls")
+        elif a == "ls -a":
+                os.system("ls -a")
+        elif a == "ls -l":
+                os.system("ls -l")
         elif a[0:5] == "mkdir":
                 b = "mkdir "+ str(a[6:])
                 os.system(b) 
