@@ -50,22 +50,37 @@ while(bandera == 1):
                         print("No se encontro la direccion")
 
         elif a[0:2] == "ls":
-                b = "ls "+ str(a[3:])
-                os.system(b)
-
-        elif a[0:2] == "ls":
-                b = "ls "+ str(a[3:])
+                b = "dir "+ str(a[3:])
                 os.system(b)
 
         elif a[0:5] == "mkdir":
                 b = "mkdir "+ str(a[6:])
-                os.system(b) 
+                try:
+                        os.system(b) 
+                except:
+                        print("No se logo crear la carpeta")
+
+        elif a[0:4] == "echo":
+                b = "echo "+ str(a[5:])
+                try:
+                        os.system(b) 
+                except:
+                        print("No se logo crear el archivo")
+
         elif a[0:5] == "rmdir":
                 b = "rmdir "+ str(a[6:])
-                os.system(b) 
+
+                try:
+                        os.system(b) 
+                except:
+                        print("No se encontro la carpeta")
+
         elif a[0:2] == "rm":
                 b = "rm "+ str(a[3:])
-                os.system(b)                     
+                try:
+                        os.system(b)    
+                except:
+                        print("No se logro eliminar el archivo")                 
         else:
                 print("Comando equivocado")
 
