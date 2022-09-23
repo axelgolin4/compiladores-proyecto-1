@@ -1,13 +1,17 @@
+from genericpath import exists
 import os
 
 bandera = 1
+directorioActual = os.getcwd()
 print("Bienvenido a nuestro interprete de comandos")
 print("")
 input("Precione enter para continuar...")
-os.system("clear")
+os.system("cls")
+
 
 while(bandera == 1):
-        os.system("pwd")
+        print(os.getcwd())
+        dir = os.getcwd()
         a = input()
 
         if a == "pwd":
@@ -37,9 +41,17 @@ while(bandera == 1):
         elif a == "uname -a":
                 os.system("ver")
 
-        #El CD NO FUNCIONA
-        elif a == "cd":
-                os.system("cd ..")
+        #CD
+        elif a[0:3] == "cd ":
+                directorioNuevo = str(a[3:])
+                try:
+                        os.chdir(directorioNuevo)
+                except:
+                        print("No se encontro la direccion")
+
+        elif a[0:2] == "ls":
+                b = "ls "+ str(a[3:])
+                os.system(b)
 
         elif a[0:2] == "ls":
                 b = "ls "+ str(a[3:])
