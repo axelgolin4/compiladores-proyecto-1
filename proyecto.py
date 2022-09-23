@@ -9,7 +9,8 @@ input("Precione enter para continuar...")
 os.system("cls")
 
 while(bandera == 1):
-
+        
+        print(os.getcwd())
         a = input()
 
         if a == "pwd":
