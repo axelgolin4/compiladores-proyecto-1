@@ -11,7 +11,7 @@ while(bandera == 1):
         a = input()
 
         if a == "pwd":
-                os.system("pwd")
+                os.system("cd")
         elif a == "date":
                 os.system("date")
         elif a == "time":
@@ -19,7 +19,7 @@ while(bandera == 1):
         elif a == "exit":
                 bandera = 2
         elif a == "clear":
-                os.system("clear")
+                os.system("cls")
         elif a == "Man":
                 print("pwd Muestra el directorio activo")
                 print("time muestra/establece la hora.")
@@ -41,12 +41,10 @@ while(bandera == 1):
         elif a == "cd":
                 os.system("cd ..")
 
-        elif a == "ls":
-                os.system("ls")
-        elif a == "ls -a":
-                os.system("ls -a")
-        elif a == "ls -l":
-                os.system("ls -l")
+        elif a[0:2] == "ls":
+                b = "ls "+ str(a[3:])
+                os.system(b)
+
         elif a[0:5] == "mkdir":
                 b = "mkdir "+ str(a[6:])
                 os.system(b) 
