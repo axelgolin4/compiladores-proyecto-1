@@ -40,19 +40,10 @@ while(bandera == 1):
                 os.system("ver")
 
         elif a[0:3] == "cd ":
-                directorioNuevo = str(a[3:])
-                if os.path.exists(directorioNuevo):
-                        directorioActual = directorioNuevo
-                        print("el nuevo directorio es " + directorioActual)
-                elif os.path.exists(directorioActual+"\\"+directorioNuevo):
-                        directorioActual = directorioActual+"\\"+directorioNuevo
-                        print("el nuevo directorio es " + directorioActual)
-                else:
-                        print("este directorio no existe!")
+                os.chdir(a[3:])
         
         elif a == "cd":
-                directorioActual = os.path.expanduser('~')
-                print("el nuevo directorio es " + directorioActual)
+                os.chdir(os.path.expanduser('~'))
 
         elif a[0:3] == "ls ":
                 b = os.listdir(str(a[3:]))
@@ -60,7 +51,7 @@ while(bandera == 1):
                         print(val)
 
         elif a == "ls":
-                b = os.listdir(directorioActual)
+                b = os.listdir(os.getcwd())
                 for val in b:
                         print(val)
 
