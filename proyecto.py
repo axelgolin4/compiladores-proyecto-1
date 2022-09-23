@@ -62,7 +62,7 @@ while(bandera == 1):
                 b = "rmdir "+ str(a[6:])
                 os.system(b) 
         elif a[0:2] == "rm":
-                b = "rm "+ str(a[3:])
+                b = "del "+ str(a[3:])
                 os.system(b)                     
         else:
                 print("Comando equivocado")
